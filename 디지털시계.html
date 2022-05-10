@@ -1,0 +1,52 @@
+<html>
+<head>
+	<style>
+	.box {
+			border:7px solid; 
+			padding:30px; 
+			width:68%;
+　			height:100px;
+			margin: auto;	
+		}
+	
+	   .layer {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+		}
+   
+	
+	.font-test { 
+			font:bold 50pt fantasy;
+			text-shadow: 5px 5px #2D63A7;
+			letter-spacing: 5px;
+			color: #E8DB6B ;	}
+	
+	.pic {
+			height: 100vh;
+			background: url("image/cl.png") no-repeat center;
+			background-size: cover
+			width: 100%;
+			height: auto;
+		}
+	</style>
+    <meta charset="UTF-8">
+    <title>Document</title>
+	<div class="box layer font-test pic">
+    <script>
+        setInterval(function(){
+	
+            var timer = new Date();
+            var h = timer.getHours();
+            var m = timer.getMinutes();
+            var s = timer.getSeconds();
+			
+            document.getElementById('digital clock').innerHTML = h + ":" + m + ":" + s;
+        },1000);
+
+    </script>
+</head>
+ 
+ 
+<h1 id="digital clock"></h1>

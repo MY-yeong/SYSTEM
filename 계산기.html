@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>계산기</title>
+</head>
+<style>
+	.te { text-align: center; 
+		  font: bold 25px;
+		  }
+</style>
+<body>	
+		<table border="4" width="400px" height="500px">
+		<div style="te">
+		
+		<tr>
+		<td colspan="4" div style="text-align:center">
+			<span style="font-size: 18px; font-style: italic ; font-weight: bold;">
+			계산기
+			</span> </td>
+		</tr>		
+				
+		<tr>
+		<td div style="text-align:center"> 
+		<span style="font-size: 15px; font-style: italic ; font-weight: bold; "> 수 입력 </span> </td>
+		<td colspan="3"> <input type="text" id="num1"/> </td> 
+		</tr>
+		
+
+		<tr>
+		<td div style="text-align:center"> 
+		<span style="font-size: 15px; font-style: italic ; font-weight: bold; "> 결과 </span> </td>
+		<td colspan="3"> <input type="text" id="result"/><br>  </td> 
+		</tr>
+	
+		<tr style="font-size: 20px; font-style: italic ; font-weight: bold; text-align:center"> 
+            <td onclick="test(7)">7</td>
+            <td onclick='test(8)'>8</td>
+            <td onclick='test(9)'>9</td>
+			<td onclick="add('/')">/</td>
+        </tr>
+		
+        <tr style="font-size: 20px; font-style: italic ; font-weight: bold; text-align:center"> 
+			<td onclick='test(4)'>4</td>
+            <td onclick='test(5)'>5</td>
+            <td onclick='test(6)'>6</td>
+			<td onclick="add('*')">*</td>
+		</tr>
+		
+        <tr style="font-size: 20px; font-style: italic ; font-weight: bold; text-align:center"> 
+            <td onclick='test(1)'>1</td>
+            <td onclick='test(2)'>2</td>
+            <td onclick='test(3)'>3</td>
+			<td onclick="add('+')">+</td>
+        </tr>
+		
+        <tr style="font-size: 20px; font-style: italic ; font-weight: bold; text-align:center"> 
+            <td onclick='test(0)'>0</td>
+			<td onclick="del()">C</td>
+			<td onclick="compute()">=</td>
+			<td onclick="add('-')">-</td>
+		</tr>
+		
+</p>
+
+
+
+<script type="text/javascript"> 
+		
+	var symbol; 
+	var nnn;
+	
+	function test (a){
+		num1.value += a;
+		
+		}
+
+	
+	function add(b){
+		 var firstNum = (document.getElementById("num1").value);
+         num = firstNum;
+         symbol = b ;
+		 nnn=Number(num1.value);
+         return document.getElementById("num1").value = "";
+		 
+	}
+	
+	
+        function compute () {
+            var secNum = document.getElementById("num1").value * 1;
+            var re_num ;
+            switch (symbol) {
+                case '+' : re_num = nnn + secNum ; 
+                document.getElementById("result").value = re_num; 
+                break;
+                case '-' : re_num = nnn - secNum ; 
+                document.getElementById("result").value = re_num;
+                break;
+                case '*' : re_num = nnn * secNum ; 
+                document.getElementById("result").value = re_num;
+                break;
+                case '/' : re_num = nnn / secNum ; 
+                document.getElementById("result").value = re_num;
+                break;
+            }        
+        }
+		
+		function del() {
+		document.getElementById("result").value = "";
+        num1.value = "";
+		nnn= "" ;
+		
+		
+	}	
+
+</script>
+
+
+</body>
+</html>
+	
